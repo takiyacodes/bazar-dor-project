@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
       className={`${hindSiligiri.className} h-full antialiased`}
     >
       <body suppressHydrationWarning className="min-h-full flex flex-col">
-        {/* টোস্ট নোটিফিকেশন দেখানোর জন্য এটি আবশ্যিক */}
+      
         <Toaster position="top-center" reverseOrder={false} />
         
         <Navbar />

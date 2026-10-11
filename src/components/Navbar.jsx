@@ -16,24 +16,19 @@ export default function Navbar() {
 
     const { data: session } = authClient.useSession();
 
-   
+
     useEffect(() => {
         const now = new Date();
-        const options = { 
-            weekday: 'long', 
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric' 
+        const options = {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
         };
         setBanglaDate(now.toLocaleDateString('bn-BD', options));
     }, []);
 
 
-
-
-    
-
-    // Dropdown-er baire click korle seta bondho hoye jabe
     useEffect(() => {
         const handleClickOutside = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -70,7 +65,7 @@ export default function Navbar() {
         <nav className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white shadow-xs">
             {/* Main Navbar Row */}
             <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-                
+
                 {/* Left: Mobile Hamburger Icon + Public Logo & Dynamic Date */}
                 <div className="flex items-center gap-3">
                     <button
@@ -86,15 +81,15 @@ export default function Navbar() {
                             )}
                         </svg>
                     </button>
-                    
+
                     <div className="flex items-center gap-3">
                         {/* Public Folder theke Logo Image */}
                         <Link href="/" className="flex items-center justify-center shrink-0">
-                            <Image 
-                                src="/logo-icon.png" 
-                                alt="Bazar Dor Logo" 
-                                width={44} 
-                                height={44} 
+                            <Image
+                                src="/logo-icon.png"
+                                alt="Bazar Dor Logo"
+                                width={44}
+                                height={44}
                                 className="w-10 h-10 sm:w-11 sm:h-11 object-contain rounded-xl"
                             />
                         </Link>
@@ -113,7 +108,7 @@ export default function Navbar() {
 
                 {/* Right: User Profile Section with Desktop Public Image */}
                 <div className="relative" ref={dropdownRef}>
-                    <div 
+                    <div
                         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                         className="flex items-center gap-2 cursor-pointer py-1 px-2 rounded-lg hover:bg-gray-50 transition select-none"
                     >
@@ -122,6 +117,7 @@ export default function Navbar() {
                                 src={session?.user?.image || "/user.jfif"}
                                 alt="User Picture"
                                 fill
+                                sizes="36px"
                                 className="object-cover"
                             />
                         </div>
@@ -138,14 +134,14 @@ export default function Navbar() {
                         <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-100 rounded-2xl shadow-xl py-2 z-50 flex flex-col">
                             {session?.user ? (
                                 <>
-                                    <Link 
-                                        href="/profile" 
+                                    <Link
+                                        href="/profile"
                                         onClick={() => setIsDropdownOpen(false)}
                                         className="px-4 py-2.5 text-xs text-gray-700 hover:bg-gray-50 flex items-center gap-2 font-medium"
                                     >
                                         👤 আমার প্রোফাইল
                                     </Link>
-                                    <button 
+                                    <button
                                         onClick={handleSignOut}
                                         className="w-full text-left px-4 py-2.5 text-xs text-red-600 hover:bg-red-50 flex items-center gap-2 font-medium"
                                     >
@@ -154,15 +150,15 @@ export default function Navbar() {
                                 </>
                             ) : (
                                 <>
-                                    <Link 
-                                        href="/sign-in" 
+                                    <Link
+                                        href="/sign-in"
                                         onClick={() => setIsDropdownOpen(false)}
                                         className="px-4 py-2.5 text-xs text-gray-700 hover:bg-gray-50 flex items-center gap-2 font-medium"
                                     >
                                         🔑 সাইন ইন (Sign In)
                                     </Link>
-                                    <Link 
-                                        href="/sign-up" 
+                                    <Link
+                                        href="/sign-up"
                                         onClick={() => setIsDropdownOpen(false)}
                                         className="px-4 py-2.5 text-xs text-emerald-700 hover:bg-emerald-50 flex items-center gap-2 font-bold"
                                     >
@@ -180,9 +176,9 @@ export default function Navbar() {
             <div className="border-t border-gray-100 bg-gray-50/70 py-2.5 overflow-x-auto scrollbar-none">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-6 text-sm font-medium text-gray-700 whitespace-nowrap">
                     {categories.map((cat, index) => (
-                        <Link 
-                            key={index} 
-                            href={`/categories/${cat.slug}`} 
+                        <Link
+                            key={index}
+                            href={`/categories/${cat.slug}`}
                             className="flex items-center gap-1.5 hover:text-emerald-600 hover:bg-white px-3 py-1 rounded-lg transition"
                         >
                             <span>{cat.icon}</span>
@@ -203,9 +199,9 @@ export default function Navbar() {
                         </li>
                         {categories.map((cat, index) => (
                             <li key={index}>
-                                <Link 
-                                    href={`/categories/${cat.slug}`} 
-                                    onClick={() => setIsMenuOpen(false)} 
+                                <Link
+                                    href={`/categories/${cat.slug}`}
+                                    onClick={() => setIsMenuOpen(false)}
                                     className="block py-1 text-gray-600 hover:text-emerald-600"
                                 >
                                     {cat.icon} {cat.name}
@@ -218,3 +214,7 @@ export default function Navbar() {
         </nav>
     );
 }
+
+
+
+
