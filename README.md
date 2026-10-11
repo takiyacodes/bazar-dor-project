@@ -22,4 +22,6 @@
 
 1. রিপোজিটরিটি ক্লোন করুন:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/takiyacodes/bazar-dor-project.git
+
+   
