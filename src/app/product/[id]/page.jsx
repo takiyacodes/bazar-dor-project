@@ -112,7 +112,7 @@ export default function ProductDetailPage() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
         
-        {/* Breadcrumb Navigation */}
+       
         <div className="flex items-center gap-2 text-xs text-gray-500 mb-6">
           <Link href="/" className="hover:underline">হোম</Link>
           <span>&gt;</span>
@@ -121,7 +121,7 @@ export default function ProductDetailPage() {
           <span className="text-gray-800 font-semibold">{product.name}</span>
         </div>
 
-        {/* Product Info Card */}
+       
         <div className="bg-white border border-gray-100 rounded-3xl p-6 sm:p-8 shadow-sm mb-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center gap-5">
             <span className="text-6xl sm:text-7xl bg-gray-50 p-4 rounded-2xl border border-gray-100">{product.emoji}</span>
@@ -141,7 +141,7 @@ export default function ProductDetailPage() {
           </div>
         </div>
 
-        {/* Price Summary */}
+    
         <div className="mb-10">
           <h2 className="text-base font-bold text-gray-900 mb-4">দামের সারসংক্ষেপ</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
@@ -163,7 +163,7 @@ export default function ProductDetailPage() {
           </div>
         </div>
 
-        {/* Market Price Table */}
+        
         <div className="bg-white border border-gray-100 rounded-3xl shadow-sm overflow-hidden">
           <div className="p-6 border-b border-gray-100">
             <h2 className="text-base font-bold text-gray-900">বাজারভিত্তিক আজকের দাম</h2>

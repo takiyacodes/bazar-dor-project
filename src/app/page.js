@@ -68,6 +68,9 @@ export default function Home() {
     .sort((a, b) => Number(a.change) - Number(b.change))
     .slice(0, 6);
 
+
+
+
   return (
     <div className="min-h-screen bg-gray-50 pb-20">
 
@@ -97,7 +100,7 @@ export default function Home() {
         <div className="bg-white border border-gray-100 rounded-3xl p-6 sm:p-10 md:p-12 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
           <div className="max-w-xl text-center md:text-left">
             <p className="text-xs sm:text-sm font-semibold text-gray-500 mb-2">
-              শনিবার, ১১ অক্টোবর, ২০২৬
+              রবিবার, ১১ অক্টোবর, ২০২৬
             </p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-4 tracking-tight leading-tight">
               আজকের বাজারের দাম এক নজরে
